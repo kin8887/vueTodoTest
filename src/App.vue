@@ -13,8 +13,6 @@
           <h4>할일을입력해주세요</h4>
           <input type="text" placeholder="할일을입력해주세요" class="todo_input"
                   v-model="inputContent">
-        
-        입력내용 : {{ inputContent }}
         <div class="options">
           <label class="label">
             <input type="radio" name="category" id="category1" value="business"
@@ -36,7 +34,6 @@
 
 		<section class="todo_list">
       <h3>TODO LIST</h3>
-			{{ todos }}
       <div class="list">
         <div :class="`todo_item ${todo.done && 'done'}`" v-for="todo in todos_asc">
           <label>
@@ -47,7 +44,7 @@
             <input type="text" v-model="todo.content">
           </div>
           <div class="actions">
-            <button class="delete" @click="removeTodo()">Delete</button>
+            <button class="delete" @click="removeTodo(todo)">Delete</button>
           </div>
         </div>
       </div>
